@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница Приложения</title>
+    <link rel="stylesheet" href="styles-app.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app-container"></div>
+
+    <script>
+    // Функция для получения параметров из URL
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // Функция для создания HTML-кода приложения
+    function createAppHTML(app) {
+        return `
+            <main class="app-main">
+                <section class="app-info">
+                    <div class="row">
+                        <img src="${app.icon}" alt="Иконка Приложения" class="app-icon">
+                        <h1>${app.name}</h1>
+                        <a href="${app.downloadUrl}" class="download-button">Скачать</a>
+                    </div>
+                    <h3>Автор:${app.author}</h3>
+                    <p>${app.descriptionTitle}</p>
+                </section>
+                <section class="app-details">
+                    <h3>Описание</h3>
+                    <p>${app.description}</p>
+                </section>
+            </main>
+        `;
+    }
+
+    // Получение ID приложения из URL
+    const appId = getQueryParam('id');
+
+    // Загрузка данных из JSON и добавление их на страницу
+    axios.get('data.json').then(response => {
+        const appData = response.data.find(app => app.id.toString() === appId);
+        if (appData) {
+            const appHTML = createAppHTML(appData);
+            document.getElementById('app-container').innerHTML = appHTML;
+        } else {
+            console.error('Приложение не найдено');
+        }
+    }).catch(error => console.error('Ошибка загрузки данных:', error));
+    </script>
+
+    <footer class="app-footer">
+        <p>© 2024 V-market</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.app-container {
+    text-align: center;
+}
+
+.home-icon {
+    width: 50px;
+    height: 50px;
+    background-image: url('/VaheeMand/ui/home-icon.png');
+    background-size: cover;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.app-main {
+    padding: 20px;
+}
+
+.app-info, .app-details {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.app-info h1 {
+    font-size: 40px;
+    margin-left: auto;
+}
+
+.app-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    background-color: #ddd;
+    border-radius: 15%;
+}
+
+.app-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+.row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.download-button:hover {
+    background-image: linear-gradient(to left, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.download-button:active {
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .home-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .app-main {
+        padding: 10px;
+    }
+
+    .app-info, .app-details {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .app-icon {
+        width: 80px;
+        height: 80px;
+    }
+}
+.fixed-panel {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+}

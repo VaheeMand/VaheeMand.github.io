@@ -1,0 +1,132 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+
+.panel {
+    position: fixed;
+    display: flex;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 1000;
+    align-itema: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+#v-market {
+    font-weight: bold;
+    font-size: 40px; /* Увеличенный размер текста */
+    /* Остальные стили для надписи V-Market */
+}
+
+.social-button {
+    padding: 8px 10px;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 1px;
+}
+
+.youtube-button {
+    background-color: #FF0000; /* Красный цвет для YouTube */
+}
+
+.discord-button {
+    background-color: #7289DA; /* Синий цвет для Discord */
+}
+
+.telegram-button {
+    background-color: #2CA5E0; /* Голубой цвет для Telegram */
+}
+
+.icon-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+.icon-button img {
+    width: 100%;
+    height: auto;
+    /* Стили для изображений внутри кнопок */
+}
+.app-list {
+    width: 100%;
+    padding: 10px;
+    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.app-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 10px;
+    border-radius: 10px;
+    width: calc(25% - 20px);
+    margin: 10px;
+}
+
+.app-icon {
+    width: 75px;
+    height: 75px;
+    margin-right: 10px;
+    border-radius: 15%;
+}
+
+.app-details {
+    flex-grow: 1;
+}
+
+.app-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.app-author {
+    font-size: 16px;
+}
+
+.app-description {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.more-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 940px) {
+    .app-item {
+        width: calc(45% - 20px); /* Для двух элементов в строке на меньших экранах */
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .app-item {
+        width: 100%; /* Для одного элемента в строке на мобильных устройствах */
+    }
+}
